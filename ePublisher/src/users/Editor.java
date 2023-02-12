@@ -2,17 +2,14 @@ package users;
 
 public class Editor extends User{
 
-    enum Role{
-        CHIEF_EDITOR,
-        EDITOR
-    }
+
     private String editorId;
 
     private String editorName;
 
     private String editorEmail;
 
-    private Role editorRole;
+    private EditorRole editorRole;
 
     private UserType userType;
 
@@ -44,11 +41,11 @@ public class Editor extends User{
         this.editorEmail = editorEmail;
     }
 
-    public Role getEditorRole() {
+    public EditorRole getEditorRole() {
         return editorRole;
     }
 
-    public void setEditorRole(Role editorRole) {
+    public void setEditorRole(EditorRole editorRole) {
         this.editorRole = editorRole;
     }
 
