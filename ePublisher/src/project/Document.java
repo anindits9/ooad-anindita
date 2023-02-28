@@ -1,48 +1,17 @@
 package project;
 
-public class Document {
+import users.User;
 
-    private String docId;
+public class Document extends Resource{
 
-    private String docName;
-
-    private String docType;
 
     private Integer docSize;
 
-    public Document(String doc_id) {
-        this.docId = doc_id;
+
+    public Document(String resourceID, User createdBy, String resouceName, String createdOn) {
+        super(resourceID, createdBy, resouceName, createdOn);
+
     }
 
-    public String getDocId() {
-        return docId;
-    }
 
-    public void setDocId(String docId) {
-        this.docId = docId;
-    }
-
-    public String getDocName() {
-        return docName;
-    }
-
-    public void setDocName(String docName) {
-        this.docName = docName;
-    }
-
-    public String getDocType() {
-        return docType;
-    }
-
-    public void setDocType(String docType) {
-        this.docType = docType;
-    }
-
-    public Integer getDocSize() {
-        return docSize;
-    }
-
-    public void setDocSize(Integer docSize) {
-        this.docSize = docSize;
-    }
 }

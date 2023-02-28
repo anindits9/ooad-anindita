@@ -1,9 +1,8 @@
 package project;
 
 import users.Editor;
-import users.Author;
+import users.User;
 
-import java.util.ArrayList;
 import java.util.List;
 public class Project {
 
@@ -18,12 +17,13 @@ public class Project {
 
     private String projectName;
 
-    private Author author;
-
-    private List<Editor> editors;
+    private List<User> users;
 
     private List<Submission> submissions;
 
+    private Editor createdBy;
+
+    private List<Resource> resources;
     private ProjectStatus status;
 
     private String createdDate;
@@ -32,16 +32,11 @@ public class Project {
 
     private String publicationDate;
 
-    public Project(){
-        this.editors = new ArrayList<>();
-        this.submissions = new ArrayList<>();
-        this.status = ProjectStatus.INACTIVE;
-    }
-    public Project(String projectId) {
-        this.projectId = projectId;
-        this.editors = new ArrayList<>();
-        this.submissions = new ArrayList<>();
-        this.status = ProjectStatus.INACTIVE;
+    public Project(String projectName, Editor createdBy, ProjectStatus status, String createdDate) {
+        this.projectName = projectName;
+        this.createdBy = createdBy;
+        this.status = status;
+        this.createdDate = createdDate;
     }
 
     public String getProjectId() {
@@ -60,20 +55,12 @@ public class Project {
         this.projectName = projectName;
     }
 
-    public Author getAuthor() {
-        return author;
+    public List<User> getUsers() {
+        return users;
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
-    }
-
-    public List<Editor> getEditors() {
-        return editors;
-    }
-
-    public void setEditors(List<Editor> editors) {
-        this.editors = editors;
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 
     public List<Submission> getSubmissions() {
@@ -82,6 +69,14 @@ public class Project {
 
     public void setSubmissions(List<Submission> submissions) {
         this.submissions = submissions;
+    }
+
+    public List<Resource> getResources() {
+        return resources;
+    }
+
+    public void setResources(List<Resource> resources) {
+        this.resources = resources;
     }
 
     public ProjectStatus getStatus() {
@@ -114,5 +109,13 @@ public class Project {
 
     public void setPublicationDate(String publicationDate) {
         this.publicationDate = publicationDate;
+    }
+
+    public Editor getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(Editor createdBy) {
+        this.createdBy = createdBy;
     }
 }

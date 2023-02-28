@@ -2,36 +2,17 @@ package users;
 
 public class Admin extends User{
 
-    private String id;
-    private String firstName;
-
-    private String lastName;
-
-    public Admin(String id) {
-        this.id = id;
+    protected String emailID;
+    public Admin(String email, String fName, String lName) {
+        super(email, fName, lName);
+        this.emailID = email;
     }
 
-    public String getId() {
-        return id;
+    void createUser(){
+
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    void disableUser(){
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 }
